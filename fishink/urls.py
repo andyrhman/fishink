@@ -7,5 +7,4 @@ urlpatterns = [
     path('insight/', WebsiteInsightAPIView.as_view(), name="website-insight"),   
     path("certificate-history/", CertificateHistoryAPIView.as_view(), name="certificate-history"),
     path("screenshot/", WebsiteScreenshotAPIView.as_view(), name="website-screenshot"),   
-   
 ]
