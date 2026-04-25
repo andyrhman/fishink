@@ -10,6 +10,28 @@
   Backend Django REST Framework untuk sistem deteksi URL phishing Fishink, termasuk integrasi model machine learning, website insight, riwayat sertifikat, dan screenshot website.
 </p>
 
+## Instalasi Playwright
+
+Sebelum menjalankan server di wajibkan untuk menginstall chromium di playwright.
+
+```bash
+sudo apt-get update
+sudo apt-get install -y \
+  libnspr4 \
+  libnss3 \
+  libatk-bridge2.0-0t64 \
+  libgtk-3-0t64 \
+  libxkbcommon0 \
+  libasound2t64 \
+  libgbm1 \
+  libx11-xcb1 \
+  libdrm2 \
+  libxcomposite1 \
+  libxdamage1 \
+  libxrandr2
+python -m playwright install --with-deps chromium
+```
+
 ## Tentang Project
 
 Fishink Backend adalah layanan backend berbasis **Django REST Framework** yang menangani seluruh proses analisis URL untuk ekosistem Fishink.
