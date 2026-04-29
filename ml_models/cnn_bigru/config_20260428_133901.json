@@ -1,0 +1,39 @@
+{
+  "SEED": 42,
+  "VOCAB_SIZE": 100,
+  "MAX_LEN": 250,
+  "EMBED_DIM": 64,
+  "BATCH_SIZE": 128,
+  "EPOCHS": 35,
+  "L2_RATE": 0.0005,
+  "loss_function": {
+    "main_output": "binary_crossentropy",
+    "aux_output": "binary_crossentropy"
+  },
+  "loss_weights": {
+    "main_output": 1.0,
+    "aux_output": 0.3
+  },
+  "class_weights_train": {
+    "0": 0.663373990464875,
+    "1": 2.0302313378563737
+  },
+  "OPTIMAL_THRESHOLD": 0.021072331815958023,
+  "DEFAULT_THRESHOLD": 0.5,
+  "train_samples": 441084,
+  "val_samples": 110272,
+  "test_samples": 200565,
+  "architecture": "CNN_BiGRU",
+  "cnn_filters": 128,
+  "cnn_kernel_size": 5,
+  "rnn_type": "BiGRU",
+  "rnn_units": 64,
+  "struct_features": 32,
+  "dense_head": 128,
+  "dropout_rate": 0.3,
+  "spatial_dropout": 0.2,
+  "results": {
+    "val_main_accuracy": 0.9783029556274414,
+    "val_main_loss": 0.0741523876786232
+  }
+}
