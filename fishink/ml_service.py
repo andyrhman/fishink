@@ -66,10 +66,10 @@ def is_whitelisted_domain(hostname: str) -> tuple[bool, str | None]:
 def load_artifacts():
     model_dir = settings.PHISHING_MODEL_DIR
 
-    model_path = os.path.join(model_dir, "cnn_bigru_20260428_133901.keras")
-    tokenizer_path = os.path.join(model_dir, "tokenizer_20260428_133901.pkl")
-    scaler_path = os.path.join(model_dir, "scaler_20260428_133901.pkl")
-    config_path = os.path.join(model_dir, "config_20260428_133901.json")
+    model_path = os.path.join(model_dir, "cnn_structural_features_20260502_082141.keras")
+    tokenizer_path = os.path.join(model_dir, "tokenizer_20260502_082141.pkl")
+    scaler_path = os.path.join(model_dir, "scaler_20260502_082141.pkl")
+    config_path = os.path.join(model_dir, "config_20260502_082141.json")
 
     model = tf.keras.models.load_model(model_path, compile=False)
 
@@ -98,7 +98,7 @@ def predict_phishing(url: str):
 
     threshold = float(config.get("OPTIMAL_THRESHOLD", 0.5))
 
-    # Whitelist override: trusted domains are forced to TERPERCAYA
+    # Whitelist override: trusted domains are forced to AMAN
     if whitelist_hit:
         return {
             "url": raw_url,
@@ -107,7 +107,7 @@ def predict_phishing(url: str):
             "estimated_phishing_score": 0.0,
             "model_probability": None,
             "threshold": threshold,
-            "prediction": "TERPERCAYA",
+            "prediction": "AMAN",
             "whitelist_override": True,
             "matched_trusted_domain": matched_domain,
         }
@@ -131,7 +131,7 @@ def predict_phishing(url: str):
     )
 
     probability_percent = round(proba * 100, 2)
-    label = "PHISHING" if proba >= threshold else "TERPERCAYA"
+    label = "PHISHING" if proba >= threshold else "AMAN"
 
     return {
         "url": raw_url,

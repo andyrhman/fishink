@@ -77,7 +77,7 @@ Model ini dipakai untuk:
 * ekstraksi fitur struktural,
 * tokenisasi URL,
 * inferensi probabilitas phishing,
-* dan pemetaan hasil menjadi `PHISHING` atau `TERPERCAYA`.
+* dan pemetaan hasil menjadi `PHISHING` atau `AMAN`.
 
 Selain itu, backend juga memiliki whitelist trusted domain untuk menekan false positive pada website populer dan terpercaya.
 
@@ -116,6 +116,6 @@ Contoh respons:
     "probability": 0.12,
     "estimated_phishing_score": 12.0,
     "threshold": 0.05685228854417801,
-    "prediction": "TERPERCAYA"
+    "prediction": "AMAN"
   }
 }

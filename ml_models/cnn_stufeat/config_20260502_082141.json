@@ -18,22 +18,22 @@
     "0": 0.663373990464875,
     "1": 2.0302313378563737
   },
-  "OPTIMAL_THRESHOLD": 0.021072331815958023,
+  "OPTIMAL_THRESHOLD": 0.031851060688495636,
   "DEFAULT_THRESHOLD": 0.5,
   "train_samples": 441084,
   "val_samples": 110272,
   "test_samples": 200565,
-  "architecture": "CNN_BiGRU",
+  "architecture": "CNN_STRUCTURAL_FEATURES",
   "cnn_filters": 128,
   "cnn_kernel_size": 5,
-  "rnn_type": "BiGRU",
+  "rnn_type": "CNN",
   "rnn_units": 64,
   "struct_features": 32,
   "dense_head": 128,
   "dropout_rate": 0.3,
   "spatial_dropout": 0.2,
   "results": {
-    "val_main_accuracy": 0.9783029556274414,
-    "val_main_loss": 0.0741523876786232
+    "val_main_accuracy": 0.9788613319396973,
+    "val_main_loss": 0.06516215950250626
   }
 }
