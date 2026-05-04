@@ -66,10 +66,10 @@ def is_whitelisted_domain(hostname: str) -> tuple[bool, str | None]:
 def load_artifacts():
     model_dir = settings.PHISHING_MODEL_DIR
 
-    model_path = os.path.join(model_dir, "cnn_structural_features_20260502_082141.keras")
-    tokenizer_path = os.path.join(model_dir, "tokenizer_20260502_082141.pkl")
-    scaler_path = os.path.join(model_dir, "scaler_20260502_082141.pkl")
-    config_path = os.path.join(model_dir, "config_20260502_082141.json")
+    model_path = os.path.join(model_dir, "cnn_structural_features_20260503_114940.keras")
+    tokenizer_path = os.path.join(model_dir, "tokenizer_20260503_114940.pkl")
+    scaler_path = os.path.join(model_dir, "scaler_20260503_114940.pkl")
+    config_path = os.path.join(model_dir, "config_20260503_114940.json")
 
     model = tf.keras.models.load_model(model_path, compile=False)
 

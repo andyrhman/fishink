@@ -15,13 +15,13 @@
     "aux_output": 0.3
   },
   "class_weights_train": {
-    "0": 0.663373990464875,
-    "1": 2.0302313378563737
+    "0": 0.6647706764203384,
+    "1": 2.0172602639697694
   },
-  "OPTIMAL_THRESHOLD": 0.031851060688495636,
+  "OPTIMAL_THRESHOLD": 0.04391981288790703,
   "DEFAULT_THRESHOLD": 0.5,
-  "train_samples": 441084,
-  "val_samples": 110272,
+  "train_samples": 442014,
+  "val_samples": 110504,
   "test_samples": 200565,
   "architecture": "CNN_STRUCTURAL_FEATURES",
   "cnn_filters": 128,
@@ -33,7 +33,7 @@
   "dropout_rate": 0.3,
   "spatial_dropout": 0.2,
   "results": {
-    "val_main_accuracy": 0.9788613319396973,
-    "val_main_loss": 0.06516215950250626
+    "val_main_accuracy": 0.9780731797218323,
+    "val_main_loss": 0.06541773676872253
   }
 }
