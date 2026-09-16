@@ -1,6 +1,8 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import AllowAny
+from rest_framework.generics import ListAPIView
 
 from .serializers import (
     ScreenshotSerializer,
@@ -64,3 +66,13 @@ class WebsiteScreenshotAPIView(APIView):
             return Response(result, status=status.HTTP_400_BAD_REQUEST)
 
         return Response({"success": True, "data": result}, status=status.HTTP_200_OK)
+    
+class HealthCheckAPIView(ListAPIView):
+    authentication_classes = []
+    permission_classes     = [AllowAny]
+
+    def get(self, request, *args, **kwargs):
+        return Response(
+            {"status": "✅ ok", "message": "🏃‍♀️‍➡️ Server berjalan!"},
+            status=status.HTTP_200_OK
+        )   
