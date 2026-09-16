@@ -4,8 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: phishing_api
-    volumes:
-      - .:/app
+    restart: always
     ports:
-      - "8000:8000"
+      - "80:8000"
     shm_size: "1gb"
