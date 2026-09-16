@@ -113,3 +113,7 @@ local_settings.py
 
 # Docker database
 .pgdata/
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
