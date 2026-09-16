@@ -24,10 +24,9 @@ PHISHING_MODEL_DIR = os.path.join(BASE_DIR, "ml_models/cnn_structural_feature_op
 SECRET_KEY = 't)2ud$%_gr+ihqq1lf4v^qbllyg%^tz=^)k@pskk&gb*el-ttr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='', cast=Csv())
 
 # Application definition
 INSTALLED_APPS = [
@@ -140,5 +139,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    "https://fishink-web.vercel.app",
+]
 CORS_ALLOW_CREDENTIALS = True
+CSRF_TRUSTED_ORIGINS = [
+    "https://fishink-web.vercel.app",
+]
