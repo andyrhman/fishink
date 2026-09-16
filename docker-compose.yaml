@@ -8,3 +8,5 @@ services:
     ports:
       - "80:8000"
     shm_size: "1gb"
+    env_file:
+      - .env
