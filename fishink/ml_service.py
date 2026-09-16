@@ -9,6 +9,16 @@ import tensorflow as tf
 from django.conf import settings
 
 from .preprocessing import clean_url, extract_structural_features, sanitize_url
+import keras.src.ops.operation as _operation_module
+
+_original_from_config = _operation_module.Operation.from_config.__func__
+
+def _lenient_from_config(cls, config):
+    if isinstance(config, dict) and "quantization_config" in config:
+        config = {k: v for k, v in config.items() if k != "quantization_config"}
+    return _original_from_config(cls, config)
+
+_operation_module.Operation.from_config = classmethod(_lenient_from_config)
 
 def normalize_hostname(hostname: str) -> str:
     return (hostname or "").strip().lower().rstrip(".")
@@ -66,10 +76,10 @@ def is_whitelisted_domain(hostname: str) -> tuple[bool, str | None]:
 def load_artifacts():
     model_dir = settings.PHISHING_MODEL_DIR
 
-    model_path = os.path.join(model_dir, "cnn_structural_features_20260503_114940.keras")
-    tokenizer_path = os.path.join(model_dir, "tokenizer_20260503_114940.pkl")
-    scaler_path = os.path.join(model_dir, "scaler_20260503_114940.pkl")
-    config_path = os.path.join(model_dir, "config_20260503_114940.json")
+    model_path = os.path.join(model_dir, "cnn_structural_features_20260606_130709.keras")
+    tokenizer_path = os.path.join(model_dir, "tokenizer_20260606_130709.pkl")
+    scaler_path = os.path.join(model_dir, "scaler_20260606_130709.pkl")
+    config_path = os.path.join(model_dir, "config_20260606_130709.json")
 
     model = tf.keras.models.load_model(model_path, compile=False)
 
